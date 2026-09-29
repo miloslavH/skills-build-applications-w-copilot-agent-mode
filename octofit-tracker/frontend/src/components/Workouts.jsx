@@ -1,12 +1,17 @@
 import CollectionPage from './CollectionPage.jsx'
 import { recordKey } from './formatters.js'
 
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
+const endpoint = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev/api/workouts/`
+  : 'http://localhost:8000/api/workouts/'
+
 export default function Workouts() {
   return (
     <CollectionPage
       title="Workouts"
       description="Suggested sessions to help keep your training moving."
-      resource="workouts"
+      endpoint={endpoint}
     >
       {(items) => (
         <div className="table-responsive">

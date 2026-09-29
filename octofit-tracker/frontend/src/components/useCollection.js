@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import { fetchCollection } from '../api.js'
 
-export function useCollection(resource) {
+export function useCollection(endpoint) {
   const [state, setState] = useState({ items: [], loading: true, error: '' })
 
   useEffect(() => {
     const controller = new AbortController()
 
-    fetchCollection(resource, { signal: controller.signal })
+    fetchCollection(endpoint, { signal: controller.signal })
       .then((items) => setState({ items, loading: false, error: '' }))
       .catch((error) => {
         if (error.name !== 'AbortError') {
@@ -16,7 +16,7 @@ export function useCollection(resource) {
       })
 
     return () => controller.abort()
-  }, [resource])
+  }, [endpoint])
 
   return state
 }

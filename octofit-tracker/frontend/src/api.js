@@ -5,7 +5,8 @@ export const API_BASE_URL = codespaceName
   : 'http://localhost:8000'
 
 export async function requestApi(path, { signal } = {}) {
-  const response = await fetch(`${API_BASE_URL}${path}`, { signal })
+  const url = path.startsWith('http') ? path : `${API_BASE_URL}${path}`
+  const response = await fetch(url, { signal })
 
   if (!response.ok) {
     throw new Error(`API request failed with status ${response.status}`)
@@ -30,7 +31,7 @@ export function normalizeCollection(payload) {
   return []
 }
 
-export async function fetchCollection(resource, { signal } = {}) {
-  const payload = await requestApi(`/api/${resource}/`, { signal })
+export async function fetchCollection(endpoint, { signal } = {}) {
+  const payload = await requestApi(endpoint, { signal })
   return normalizeCollection(payload)
 }

@@ -1,12 +1,17 @@
 import CollectionPage from './CollectionPage.jsx'
 import { recordKey } from './formatters.js'
 
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
+const endpoint = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev/api/teams/`
+  : 'http://localhost:8000/api/teams/'
+
 export default function Teams() {
   return (
     <CollectionPage
       title="Teams"
       description="Training crews, their members, and their combined points."
-      resource="teams"
+      endpoint={endpoint}
     >
       {(items) => (
         <div className="table-responsive">

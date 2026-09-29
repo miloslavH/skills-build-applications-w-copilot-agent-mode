@@ -1,12 +1,17 @@
 import CollectionPage from './CollectionPage.jsx'
 import { formatReference, recordKey } from './formatters.js'
 
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
+const endpoint = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev/api/leaderboard/`
+  : 'http://localhost:8000/api/leaderboard/'
+
 export default function Leaderboard() {
   return (
     <CollectionPage
       title="Leaderboard"
       description="Compare member and team scores for each scoring period."
-      resource="leaderboard"
+      endpoint={endpoint}
     >
       {(items) => (
         <div className="table-responsive">

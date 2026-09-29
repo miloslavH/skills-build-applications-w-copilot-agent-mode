@@ -1,12 +1,17 @@
 import CollectionPage from './CollectionPage.jsx'
 import { formatDate, formatReference, recordKey } from './formatters.js'
 
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
+const endpoint = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev/api/activities/`
+  : 'http://localhost:8000/api/activities/'
+
 export default function Activities() {
   return (
     <CollectionPage
       title="Activities"
       description="Recent training sessions recorded across your tracker."
-      resource="activities"
+      endpoint={endpoint}
     >
       {(items) => (
         <div className="table-responsive">

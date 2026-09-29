@@ -1,12 +1,17 @@
 import CollectionPage from './CollectionPage.jsx'
 import { recordKey } from './formatters.js'
 
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
+const endpoint = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev/api/users/`
+  : 'http://localhost:8000/api/users/'
+
 export default function Users() {
   return (
     <CollectionPage
       title="Users"
       description="Members with profiles in the OctoFit tracker."
-      resource="users"
+      endpoint={endpoint}
     >
       {(items) => (
         <div className="table-responsive">

@@ -1,7 +1,7 @@
 import { useCollection } from './useCollection.js'
 
-export default function CollectionPage({ title, description, resource, children }) {
-  const { items, loading, error } = useCollection(resource)
+export default function CollectionPage({ title, description, endpoint, children }) {
+  const { items, loading, error } = useCollection(endpoint)
 
   return (
     <section>
