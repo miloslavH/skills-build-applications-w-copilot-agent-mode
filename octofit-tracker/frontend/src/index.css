@@ -1,0 +1,50 @@
+:root {
+  font-family: 'Aptos', 'Trebuchet MS', sans-serif;
+  color: #202822;
+  background: #f5f7f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #f5f7f4;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-container {
+  max-width: 1200px;
+}
+
+.app-nav .nav-link {
+  color: #526056;
+}
+
+.app-nav .nav-link.active {
+  color: #fff;
+  background: #236b4b;
+}
+
+.overview-link {
+  display: block;
+  min-height: 112px;
+  padding: 1rem;
+  color: inherit;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid #dce4dc;
+  border-radius: 6px;
+  transition: border-color 140ms ease, transform 140ms ease;
+}
+
+.overview-link:hover {
+  color: inherit;
+  border-color: #236b4b;
+  transform: translateY(-2px);
+}
