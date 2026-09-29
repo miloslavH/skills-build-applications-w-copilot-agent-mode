@@ -1,0 +1,250 @@
+:root {
+  font-family: 'Aptos', 'Trebuchet MS', sans-serif;
+  color: #202822;
+  background: #f5f7f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #f5f7f4;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-container {
+  max-width: 1200px;
+}
+
+.app-nav .nav-link {
+  color: #526056;
+}
+
+.app-nav .nav-link.active {
+  color: #fff;
+  background: #236b4b;
+}
+
+.overview-link {
+  display: block;
+  min-height: 112px;
+  padding: 1rem;
+  color: inherit;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid #dce4dc;
+  border-radius: 6px;
+  transition: border-color 140ms ease, transform 140ms ease;
+}
+
+.overview-link:hover {
+  color: inherit;
+  border-color: #236b4b;
+  transform: translateY(-2px);
+}
+
+.app-header {
+  background: #fff;
+  border-bottom: 1px solid #dce4dc;
+}
+
+.app-container,
+.app-main {
+  max-width: 1200px;
+}
+
+.brand-mark {
+  object-fit: contain;
+}
+
+.api-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #526056;
+  font-size: 0.82rem;
+}
+
+.api-indicator::before {
+  width: 0.5rem;
+  height: 0.5rem;
+  content: '';
+  border-radius: 50%;
+  background: #a3ada5;
+}
+
+.api-indicator.is-online::before {
+  background: #24875c;
+}
+
+.app-nav {
+  gap: 0.35rem;
+  border-bottom: 1px solid #dce4dc;
+}
+
+.app-nav .nav-link {
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+  padding: 0.65rem 0.85rem;
+  color: #526056;
+}
+
+.app-nav .nav-link.active {
+  color: #236b4b;
+  background: transparent;
+  border-bottom-color: #236b4b;
+}
+
+.app-main {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.page-eyebrow {
+  margin-bottom: 0.6rem;
+  color: #65756a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.page-heading {
+  margin-bottom: 1.5rem;
+}
+
+.page-heading h1 {
+  margin-bottom: 0.35rem;
+  color: #202822;
+  font-size: 2rem;
+  font-weight: 650;
+}
+
+.page-heading p {
+  max-width: 44rem;
+  margin: 0;
+  color: #657168;
+}
+
+.collection-surface {
+  overflow: hidden;
+  border: 1px solid #dce4dc;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.record-count {
+  color: #236b4b;
+  font-weight: 650;
+}
+
+.collection-surface .table {
+  margin: 0;
+  color: #27332b;
+  vertical-align: middle;
+}
+
+.collection-surface .table th {
+  padding: 0.8rem 1rem;
+  background: #f5f7f4;
+  color: #657168;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.collection-surface .table td {
+  padding: 0.85rem 1rem;
+}
+
+.collection-surface .table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.cell-primary {
+  color: #202822;
+  font-weight: 600;
+}
+
+.cell-secondary {
+  color: #657168;
+  font-size: 0.87rem;
+}
+
+.type-label {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background: #edf4ef;
+  color: #236b4b;
+  font-size: 0.78rem;
+  text-transform: capitalize;
+}
+
+.collection-message {
+  padding: 2.5rem 1.25rem;
+  color: #657168;
+  text-align: center;
+}
+
+.collection-message h2 {
+  margin-bottom: 0.4rem;
+  color: #27332b;
+  font-size: 1.05rem;
+}
+
+.overview-intro {
+  max-width: 48rem;
+  margin-bottom: 2rem;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 0.75rem;
+}
+
+.overview-link {
+  min-height: 132px;
+  padding: 1.15rem;
+}
+
+.overview-link .overview-index {
+  color: #718076;
+  font-size: 0.75rem;
+  font-weight: 650;
+}
+
+.overview-link .overview-title {
+  margin-top: 1.25rem;
+  color: #202822;
+  font-size: 1.08rem;
+}
+
+@media (max-width: 575.98px) {
+  .app-nav {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: thin;
+  }
+
+  .app-nav .nav-link {
+    flex: 0 0 auto;
+    padding-right: 0.7rem;
+    padding-left: 0.7rem;
+  }
+
+  .app-main {
+    padding-top: 1.4rem;
+  }
+
+  .page-heading h1 {
+    font-size: 1.65rem;
+  }
+}
